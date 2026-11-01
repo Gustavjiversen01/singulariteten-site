@@ -1,0 +1,75 @@
+TASK 16 DONE (1 Nov 2026): the website code, ready to launch
+
+Everything is local. Nothing has been pushed, no GitHub repository created, nothing published, bought or
+registered, and no accounts made. The claude.ai artifact (version 7) was not republished. This folder is a
+git repository with one local commit on main and no remote.
+
+WHAT IS HERE
+- docs/: the site as GitHub Pages will publish it.
+  - index.html: Danish, with the PDF download links.
+  - en/index.html: English, as a real path at /en/.
+  - Both PDFs.
+  - 404.html in the same style.
+  - CNAME (singulariteten.dk), .nojekyll, robots.txt, and sitemap.xml with the da/en alternates.
+  - The favicons from the k05 mark: favicon.ico, favicon.svg (white dots in a dark tab bar),
+    apple-touch-icon, icon-192, icon-512, and site.webmanifest.
+  - The share images assets/share-da.png and share-en.png (1200x630, the website's first screen).
+- assets/social/: seven images, all in k05 style, black on white, with no old branding:
+  - LinkedIn page logo 400x400, LinkedIn page cover 1128x191, personal-profile banner 1584x396;
+  - X avatar 400x400 and header 1500x500;
+  - Substack logo 512x512 and email banner 1100x220.
+- redirect-indisingulariteten/: a ready-made redirect site for the fallback domain (DEPLOY.md, section 6, option B).
+- DEPLOY.md: the exact launch steps:
+  - the gh commands for the repository and for Pages from docs/;
+  - domain verification;
+  - the DNS records for the apex and www;
+  - HTTPS;
+  - the redirect for indisingulariteten.dk;
+  - checks after launch, and how to update the site.
+- checks/ (ignored by git): 22 screenshots (desktop and mobile, DA and EN, first screen, contents,
+  chapter, newsletter, signup, 404) and report.json.
+
+HOW IT BEHAVES
+- Head tags in each language:
+  - title, description, canonical, and hreflang for da, en and x-default;
+  - Open Graph (article, locale da_DK / en_GB, the 1200x630 image with its size and alt text);
+  - a Twitter summary_large_image card.
+- Language:
+  - the path decides it (/ Danish, /en/ English);
+  - #da / #en and ?lang= still override it;
+  - the DA / EN toggle changes the address to match, without reloading.
+- Privacy:
+  - no cookies, no localStorage or other browser storage, nothing loaded from other sites;
+  - the check confirms it on all four views, so no cookie banner is needed;
+  - the old website remembered the language choice in localStorage; the launch site uses the address instead.
+- Analytics: off. ANALYTICS = False in final_k05/_build/launch.py is the one-line switch for Plausible
+  (cookieless, EU).
+- Newsletter: provider-agnostic, still not connected. NEWSLETTER in final_k05/_build/site.py has two modes
+  with placeholders written out:
+  - page mode for Substack opens Substack's signup page in a new tab;
+  - form mode for MailerLite sends the address in the background with MailerLite's hidden fields.
+  Both modes were tested locally with stand-in addresses.
+
+HOW IT IS BUILT
+- final_k05/_build/launch.py writes all of the above from the same build as the paper and the artifact.
+  "python3 launch.py check" serves docs/ the way GitHub Pages does and makes the screenshots.
+- site.py changed only in the newsletter (the two modes and a failure message); the page looks the same.
+
+NEW WORDING TO LOOK OVER
+- The two meta descriptions:
+  - "Et essay om kunstig intelligens, Danmark og Europa af ... November 2026."
+  - "An essay on ... November 2026."
+- The image alt texts:
+  - "En formørket sol tegnet i sorte prikker over titlen Ind i Singulariteten."
+  - "An eclipsed sun drawn in black dots above the title Into the Singularity."
+- The 404 page: "Siden findes ikke", "Page not found", "Til forsiden", "English".
+- The newsletter failure message: "Det lykkedes ikke. Prøv igen om lidt." / "That did not work. Please try
+  again in a moment."
+
+NOT VERIFIED
+- The domains: on 1 Nov 2026 neither singulariteten.dk nor indisingulariteten.dk had DNS records, which
+  suggests both are free. Only the registrar can confirm it.
+- MailerLite and Substack themselves: no accounts exist, so form mode was tested against a local stand-in
+  server only.
+- The gh api commands in DEPLOY.md follow GitHub's documentation but have not been run.
+- Share previews can only be tested once the domain is live (LinkedIn Post Inspector).
