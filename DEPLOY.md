@@ -166,7 +166,7 @@ The signup sends to Gustav's MailerLite form. The settings are in `NEWSLETTER` i
 
 How it behaves:
 
-- **Sending:** the address goes to MailerLite in the background. The dialog then asks the reader to look for the confirmation mail, because double opt-in is on.
+- **Sending:** the address goes to MailerLite in the background. The dialog then says "Tak! Du er nu tilmeldt." / "Thanks! You’re now subscribed.", because double opt-in is off. If it is turned on in MailerLite, change `nl_thanks` in `site.py` to ask for the confirmation mail.
 - **No answer back:** the page cannot see MailerLite's answer, so the form must be saved and active in MailerLite's dashboard; otherwise readers are thanked but not added.
 - **Before announcing the newsletter,** send one real signup with your own address and confirm it.
 - **To switch to Substack** (page mode) or change the form, edit `NEWSLETTER` and follow "Updating the site".
