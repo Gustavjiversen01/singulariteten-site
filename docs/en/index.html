@@ -632,7 +632,7 @@ strong { font-weight: 600; }
     ev.preventDefault();
     var btn = f.querySelector("button");
     btn.disabled = true;
-    /* the reply is opaque (no-cors): the service answers the reader with its confirmation mail */
+    /* the reply is opaque (no-cors), so the page cannot see the service's answer */
     fetch(f.getAttribute("action"), { method: "POST", body: new FormData(f), mode: "no-cors" })
       .then(function () { f.reset(); st.textContent = f.getAttribute("data-thanks"); },
             function () { st.textContent = f.getAttribute("data-fail"); })
