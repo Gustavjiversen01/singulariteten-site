@@ -156,14 +156,20 @@ git add -A && git commit -m "Describe the change" && git push
 
 GitHub Pages republishes within a minute or two.
 
-## Newsletter (not connected)
+## Newsletter (MailerLite)
 
-The signup is provider-agnostic. To connect it, fill in one mode in `NEWSLETTER` in `final_k05/_build/site.py`, then follow "Updating the site". The comment there shows both modes filled in:
+The signup sends to Gustav's MailerLite form. The settings are in `NEWSLETTER` in `final_k05/_build/site.py`:
 
-- **Page mode, for Substack:** `page = "https://NAME.substack.com/subscribe"`. The button opens Substack's signup page in a new tab.
-- **Form mode, for MailerLite:** `form`, `field` and `extra`, copied from the HTML code of MailerLite's embedded form. The address is sent in the background, and MailerLite sends the confirmation mail.
+- `form`: `https://assets.mailerlite.com/jsonp/2760610/forms/202962543441872796/subscribe`
+- `field`: `fields[email]`
+- `extra`: MailerLite's hidden fields, `ml-submit` and `anticsrf`
 
-No account has been created. Form mode has been tested only against a local stand-in server, so send one real test signup after connecting.
+How it behaves:
+
+- **Sending:** the address goes to MailerLite in the background. The dialog then asks the reader to look for the confirmation mail, because double opt-in is on.
+- **No answer back:** the page cannot see MailerLite's answer, so the form must be saved and active in MailerLite's dashboard; otherwise readers are thanked but not added.
+- **Before announcing the newsletter,** send one real signup with your own address and confirm it.
+- **To switch to Substack** (page mode) or change the form, edit `NEWSLETTER` and follow "Updating the site".
 
 ## Privacy and analytics
 
