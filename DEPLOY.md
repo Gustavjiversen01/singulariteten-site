@@ -138,7 +138,12 @@ gh api -X PUT repos/Gustavjiversen01/indisingulariteten-redirect/pages -f cname=
 
 ## 7. After launch
 
-- **The site:** open https://singulariteten.dk/ and https://singulariteten.dk/en/. Try DA / EN (the address follows the choice), both PDF links, the newsletter dialog, and a missing page such as https://singulariteten.dk/ikke-her for the 404 page.
+- **The site:** open https://singulariteten.dk/ and https://singulariteten.dk/en/. Try:
+  - DA / EN (the address follows the choice);
+  - Listen and Download as PDF;
+  - both PDF links;
+  - the newsletter dialog;
+  - a missing page such as https://singulariteten.dk/ikke-her for the 404 page.
 - **Share previews:**
   - LinkedIn: paste the address into the Post Inspector (https://www.linkedin.com/post-inspector/). This also refreshes LinkedIn's copy.
   - X: shows the large card when a post contains the link.
@@ -170,6 +175,19 @@ How it behaves:
 - **No answer back:** the page cannot see MailerLite's answer, so the form must be saved and active in MailerLite's dashboard; otherwise readers are thanked but not added.
 - **Before announcing the newsletter,** send one real signup with your own address and confirm it.
 - **To switch to Substack** (page mode) or change the form, edit `NEWSLETTER` and follow "Updating the site".
+
+## Read-aloud and PDF buttons
+
+At the head of the paper sit "Lyt" / "Listen" and "Download som PDF" / "Download as PDF".
+
+- **Listen** opens a player docked at the foot of the window. It has play and pause, a seek line with
+  a tick at each chapter, a chapter menu, the time left, speed (1×, 1,25×, 1,5×) and a close button.
+- **The audio files** are `docs/audio/Ind-i-singulariteten_DA.mp3` and `Into-the-Singularity_EN.mp3`.
+  They are fetched only when Listen is pressed (`preload="none"`), so the page itself stays light.
+- **How the audio is made:** the steps and the model are in `~/Documents/Investment/output/tts/README.md`.
+  The audio is not rebuilt automatically, so after a text change make the audio again before
+  rebuilding the site.
+- **Download as PDF** downloads the current language's PDF, the same file as the "PDF" link in the colophon.
 
 ## Privacy and analytics
 

@@ -2,7 +2,7 @@
 
 The website for "Ind i singulariteten" / "Into the Singularity", an essay by Gustav Jes Iversen and Emil Rønnow (November 2026).
 
-- `docs/` is the website, as GitHub Pages publishes it: `/` in Danish, `/en/` in English, the two PDFs, and a 404 page.
+- `docs/` is the website, as GitHub Pages publishes it: `/` in Danish, `/en/` in English, the two PDFs, the read-aloud MP3s in `docs/audio/`, and a 404 page.
 - `assets/social/` holds the profile images for LinkedIn, X and Substack.
 - `redirect-indisingulariteten/` is a small site that sends the fallback domain on to singulariteten.dk.
 - `DEPLOY.md` gives the launch steps.
