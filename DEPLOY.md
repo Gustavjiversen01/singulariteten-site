@@ -176,6 +176,20 @@ How it behaves:
 - **Before announcing the newsletter,** send one real signup with your own address and confirm it.
 - **To switch to Substack** (page mode) or change the form, edit `NEWSLETTER` and follow "Updating the site".
 
+### The optional comment
+
+Under the address there is an optional field: "Kommentar til os (ikke offentlig)" / "A note to us (not public)". The settings are in `COMMENTS` in `site.py`.
+
+- **No comment:** nothing changes. The signup sends exactly what it sent before.
+- **With a comment:**
+  - MailerLite gets it as `fields[comment]` on the subscriber, on one line. It is stored only if the subscriber field `comment` exists in MailerLite.
+  - Once the signup has gone, the comment is also emailed to kommentar@singulariteten.dk through FormSubmit (`https://formsubmit.co/ajax/kommentar@singulariteten.dk`). The email includes the address, the page language, the time and the page.
+- **Limits:** a comment is at most 1,000 characters, because MailerLite refuses the whole signup if any field is longer than 1,024.
+- **Robots:** an invisible honeypot field means a robot's comment is sent nowhere.
+- **If the comment service fails,** the signup is not affected.
+- **FormSubmit activation:** its first submission sends an activation email to kommentar@. That link must be clicked once, and comments sent before it are delivered after activation.
+- **To switch to another service,** for example Web3Forms, change `url` and `extra` in `COMMENTS`.
+
 ## Read-aloud and PDF buttons
 
 At the head of the paper sit "Lyt" / "Listen" and "Download som PDF" / "Download as PDF".
