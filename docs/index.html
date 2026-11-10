@@ -209,6 +209,10 @@ strong { font-weight: 600; }
 .colophon .also { margin-top: calc(var(--fs) * 1.6); font-style: italic; }
 .colophon .also a, .colophon .up a { font-style: normal; }
 .colophon .up { margin-top: calc(var(--fs) * 2.2); font-size: var(--label-fs); }
+.colophon .follow { margin-top: calc(var(--fs) * 1.6); font-style: italic; }   /* styled as .also, which launch.py's check fetches */
+.colophon .also + .follow { margin-top: calc(var(--fs) * .4); }
+.colophon .follow a { font-style: normal; }
+.follow a, .nl-follow a { padding: .45em .35em; margin: 0 -.35em; }   /* a larger tap target, the same line */
 
 /* the newsletter: the invitation after the essay, and the signup it opens */
 .nl-end { margin-top: calc(var(--fs) * 7); text-align: center; }
@@ -222,6 +226,8 @@ strong { font-weight: 600; }
                    text-decoration: none; cursor: pointer; transition: background-color .15s, color .15s; }
 .nl-cta { background: var(--paper); color: var(--ink); }
 .nl-cta:hover { background: var(--ink); color: var(--paper); }
+.nl-follow { margin: calc(var(--fs) * 1.3) 0 0; font-style: italic; color: var(--muted); }
+.nl-follow a { font-style: normal; color: var(--ink); }
 .nl-btn { flex: 1 0 auto; background: var(--ink); color: var(--paper); }   /* full width when it wraps under the field */
 .nl-btn:hover { background: var(--paper); color: var(--ink); }
 .nl-btn:disabled { opacity: .45; cursor: default; }
@@ -335,7 +341,7 @@ body.listening { padding-bottom: 76px; }
 @media print {
   .actions, .player { display: none !important; }
   html, body { background: #FFFFFF !important; color: #000000 !important; }
-  .hero, .top, .skip, .rail, .colophon .up, .nl-end, .nl { display: none !important; }
+  .hero, .top, .skip, .rail, .colophon .up, .colophon .follow, .nl-end, .nl { display: none !important; }
   .sidenote { display: block; color: #000000; }
   .label, .ch-num, .toc-num, .fig-label, .ch .fig-note, .colophon .when { color: #000000; }
   .plot .halo { fill: #FFFFFF; }
@@ -499,7 +505,7 @@ body.listening { padding-bottom: 76px; }
 <p>Maskinerne bliver lige så dygtige som os til det meste af det arbejde, vi får løn for. Det kan ingen længere forhindre. Det, vi stadig kan bestemme, er, hvordan vi vil forstå os selv i en verden, hvor vi ikke længere er de mest intelligente, og hvem der ejer den intelligens, der overtager.</p>
 <p>Vi har krydset horisonten, og vi kan ikke vende om. Vi må vågne op og forstå, at vi ikke længere har et valg om vi skal ind i singulariteten. Valget består i, om Danmark og Europa skal formå at komme ud på den anden side i den relative position vi er i nu, og vi er allerede bagud.</p>
 </section>
-<aside class="nl-end" aria-labelledby="da-nl-h"><h2 class="label" id="da-nl-h">Nyhedsbrev</h2><p class="nl-pitch">Få nyt fra os direkte i din indbakke.</p><a class="nl-open nl-cta" href="#nyhedsbrev">Tilmeld dig</a></aside>
+<aside class="nl-end" aria-labelledby="da-nl-h"><h2 class="label" id="da-nl-h">Nyhedsbrev</h2><p class="nl-pitch">Få nyt fra os direkte i din indbakke.</p><a class="nl-open nl-cta" href="#nyhedsbrev">Tilmeld dig</a><p class="nl-follow">eller følg os på <a class="sc" href="https://www.linkedin.com/company/singulariteten" target="_blank" rel="noopener">LinkedIn</a> og <a class="sc" href="https://x.com/singularitetDK" target="_blank" rel="noopener">X</a></p></aside>
 <section class="about" id="da-about" aria-labelledby="da-about-h"><h2 class="label" id="da-about-h">Om os</h2><p>Ind i singulariteten er et uafhængigt dansk initiativ, stiftet i 2026 af Gustav Jes Iversen og Emil Rønnow. Vi oversætter det, der sker ved fronten af kunstig intelligens, til det, det betyder for Danmark og Europa: i teknologien, i økonomien, for statskassen, for arbejdsmarkedet, og i energien. Gustav har baggrund i maskinlæring og autonome systemer og følger, hvad maskinerne faktisk kan, og hvordan den fysiske udbygning af AI foregår. Emil har baggrund i international politik og dataanalyse, arbejder med de finansielle markeder og følger, hvordan kapital, renter, skat og danske institutioner reagerer. Intet i denne tekst er investeringsrådgivning.</p></section>
 </div>
 <div class="en essay" lang="en">
@@ -628,7 +634,7 @@ body.listening { padding-bottom: 76px; }
 <p>The machines will become as capable as we are at most of the work we are paid for. Nobody can prevent that any longer. What we can still decide is how we want to understand ourselves in a world where we are no longer the most intelligent, and who owns the intelligence that takes over.</p>
 <p>We have crossed the horizon, and we cannot turn back. We must wake up and understand that we no longer have a choice about whether to go into the singularity. The choice is whether Denmark and Europe will manage to come out on the other side in the relative position we are in now, and we are already behind.</p>
 </section>
-<aside class="nl-end" aria-labelledby="en-nl-h"><h2 class="label" id="en-nl-h">Newsletter</h2><p class="nl-pitch">Get our latest straight to your inbox.</p><a class="nl-open nl-cta" href="#newsletter">Subscribe</a></aside>
+<aside class="nl-end" aria-labelledby="en-nl-h"><h2 class="label" id="en-nl-h">Newsletter</h2><p class="nl-pitch">Get our latest straight to your inbox.</p><a class="nl-open nl-cta" href="#newsletter">Subscribe</a><p class="nl-follow">or follow us on <a class="sc" href="https://www.linkedin.com/company/singulariteten" target="_blank" rel="noopener">LinkedIn</a> and <a class="sc" href="https://x.com/singularitetDK" target="_blank" rel="noopener">X</a></p></aside>
 <section class="about" id="en-about" aria-labelledby="en-about-h"><h2 class="label" id="en-about-h">About us</h2><p>Into the Singularity (Ind i singulariteten) is an independent Danish initiative, founded in 2026 by Gustav Jes Iversen and Emil Rønnow. We translate what is happening at the frontier of artificial intelligence into what it means for Denmark and Europe: in technology, in the economy, for the public finances, for the labour market, and in energy. Gustav has a background in machine learning and autonomous systems and follows what the machines can actually do and how the physical build-out of AI is unfolding. Emil has a background in international politics and data analysis, works with the financial markets and follows how capital, interest rates, tax and Danish institutions respond. Nothing in this text is investment advice.</p></section>
 </div>
 </div></main>
@@ -637,6 +643,7 @@ body.listening { padding-bottom: 76px; }
   <p class="names"><span class="da">Gustav Jes Iversen <i>og</i> Emil Rønnow</span><span class="en">Gustav Jes Iversen <i>and</i> Emil Rønnow</span></p>
   <p class="when">November 2026</p>
   <p class="also"><span class="da">Også som <a class="sc" href="Ind-i-singulariteten_DA.pdf">PDF</a></span><span class="en">Also as <a class="sc" href="Into-the-Singularity_EN.pdf">PDF</a></span></p>
+  <p class="follow"><span class="da">Følg os på <a class="sc" href="https://www.linkedin.com/company/singulariteten" target="_blank" rel="noopener">LinkedIn</a> og <a class="sc" href="https://x.com/singularitetDK" target="_blank" rel="noopener">X</a></span><span class="en">Follow us on <a class="sc" href="https://www.linkedin.com/company/singulariteten" target="_blank" rel="noopener">LinkedIn</a> and <a class="sc" href="https://x.com/singularitetDK" target="_blank" rel="noopener">X</a></span></p>
   <p class="up"><a class="sc" href="#top"><span class="da">Til toppen</span><span class="en">Back to top</span></a></p>
 </footer>
 <dialog class="nl da" id="nyhedsbrev" lang="da" tabindex="-1" aria-labelledby="nl-da-l" aria-describedby="nl-da-h">
