@@ -212,6 +212,7 @@ strong { font-weight: 600; }
 .colophon .follow { margin-top: calc(var(--fs) * 1.6); font-style: italic; }   /* styled as .also, which launch.py's check fetches */
 .colophon .also + .follow { margin-top: calc(var(--fs) * .4); }
 .colophon .follow a { font-style: normal; }
+.colophon .privacy { margin-top: calc(var(--fs) * 1.6); font-size: var(--label-fs); color: var(--muted); text-wrap: balance; }
 .follow a, .nl-follow a { padding: .45em .35em; margin: 0 -.35em; }   /* a larger tap target, the same line */
 
 /* the newsletter: the invitation after the essay, and the signup it opens */
@@ -644,6 +645,7 @@ body.listening { padding-bottom: 76px; }
   <p class="when">November 2026</p>
   <p class="also"><span class="da">Også som <a class="sc" href="../Ind-i-singulariteten_DA.pdf">PDF</a></span><span class="en">Also as <a class="sc" href="../Into-the-Singularity_EN.pdf">PDF</a></span></p>
   <p class="follow"><span class="da">Følg os på <a class="sc" href="https://www.linkedin.com/company/singulariteten" target="_blank" rel="noopener">LinkedIn</a> og <a class="sc" href="https://x.com/singularitetDK" target="_blank" rel="noopener">X</a></span><span class="en">Follow us on <a class="sc" href="https://www.linkedin.com/company/singulariteten" target="_blank" rel="noopener">LinkedIn</a> and <a class="sc" href="https://x.com/singularitetDK" target="_blank" rel="noopener">X</a></span></p>
+  <p class="privacy"><span class="da">Siden bruger GoatCounter, en anonym besøgstæller, som ikke sætter cookies og ikke indsamler personoplysninger.</span><span class="en">This site uses GoatCounter, an anonymous visitor counter that sets no cookies and collects no personal data.</span></p>
   <p class="up"><a class="sc" href="#top"><span class="da">Til toppen</span><span class="en">Back to top</span></a></p>
 </footer>
 <dialog class="nl da" id="nyhedsbrev" lang="da" tabindex="-1" aria-labelledby="nl-da-l" aria-describedby="nl-da-h">
@@ -964,5 +966,6 @@ body.listening { padding-bottom: 76px; }
   });
 })();
 </script>
+<script data-goatcounter="https://singulariteten.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

@@ -205,8 +205,9 @@ At the head of the paper sit "Lyt" / "Listen" and "Download som PDF" / "Download
 
 ## Privacy and analytics
 
-- **No cookie banner is needed.** The site sets no cookies, stores nothing in the browser (no localStorage), and loads nothing from other sites: fonts, figures and scripts are all inside the pages. The local check confirms all of this (`checks/report.json`).
-- **Analytics are off.** `ANALYTICS = False` in `final_k05/_build/launch.py` is the one-line switch. True adds Plausible's cookieless page counts. Plausible is EU-hosted and needs a paid account at plausible.io with singulariteten.dk added. No cookie banner is needed with it either.
+- **No cookie banner is needed.** The site sets no cookies and stores nothing in the browser (no localStorage). Fonts, figures and the pages' own scripts are all inside the pages. The one thing loaded from another site is the GoatCounter counting script described below. The local check in `checks/report.json` was run before the counter was added, so it does not cover it.
+- **A GoatCounter visitor counter is on** (added 12 November 2026). Every HTML page in `docs/` loads `//gc.zgo.at/count.js` just before `</body>` and reports to `https://singulariteten.goatcounter.com/count`. GoatCounter sets no cookies and, by its own description, collects no personally identifiable information. The colophon of both language pages says so in Danish and English. The numbers are at https://singulariteten.goatcounter.com.
+- **The counter was added by hand in `docs/`.** `final_k05/_build/launch.py` does not write the snippet or the colophon sentence. Its `ANALYTICS` switch is for Plausible and is still False. A rebuild that overwrites `docs/` must add both again.
 
 ## Social images (assets/social/)
 
